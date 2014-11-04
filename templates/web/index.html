@@ -1,0 +1,536 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Illumine</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="viewport" content="width=320, initial-scale=0.75, minimum-scale=0.75, maximum-scale=1.0">
+        <link rel="icon" type="image/png" href="/static/img/favicon.png" />
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" media="all" href="{% static 'css/jsDatePick_ltr.min.css' %}" />
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style6.css' %}" />
+        <link href='http://fonts.googleapis.com/css?family=Terminal+Dosis|Niconne' rel='stylesheet' type='text/css' />
+<!-- 
+	OR if you want to use the calendar in a right-to-left website
+	just use the other CSS file instead and don't forget to switch g_jsDatePickDirectionality variable to "rtl"!
+	
+	<link rel="stylesheet" type="text/css" media="all" href="jsDatePick_ltr.css" />
+-->
+<script type="text/javascript" src="{% static 'js/jquery.1.4.2.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jsDatePick.jquery.min.1.3.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery-1.8.2.min.js' %}"></script>
+        <!--[if lt IE 9]>
+            <link href="assets/css/ie8.css" rel="stylesheet" type="text/css" />
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+          <![endif]-->
+        <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.placeholder.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+
+		<script type="text/javascript">
+	window.onload = function(){
+		new JsDatePick({
+			useMode:2,
+			target:"id_Datetime",
+			dateFormat:"%Y-%m-%d"
+			/*selectedDate:{				This is an example of w{% hat the full configuration offers.
+				day:5,						For full documentation about these settings please see the full version of the code.
+				month:9,
+				year:2006
+			},
+			yearsRange:[1978,2020],
+			limitToToday:false,
+			cellColorScheme:"beige",
+			dateFormat:"%m-%d-%Y",
+			imgPath:"img/",
+			weekStartDay:1*/
+		});
+	};
+</script>
+		<!-- Color Box -->
+		<link rel="stylesheet" href="{% static 'css/colorbox.css' %}" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="{% static 'js/jquery.colorbox.js' %}"></script>
+		<script>
+			$(document).ready(function(){
+				//Examples of how to assign the Colorbox event to elements
+				$(".group2").colorbox({rel:'group2', transition:"fade"});
+
+			});
+		</script>
+		<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+		
+	<!--<link href="{% static 'css/js-image-slider.css' %}" rel="stylesheet" type="text/css" />
+    <script src="{% static 'js/js-image-slider.js' %}" type="text/javascript"></script>-->	
+	
+		<link rel="stylesheet" type="text/css" href="{% static 'css/searchboxstyle.css' %}" />
+		<script src="{% static 'js/modernizr.custom.63321.js' %}"></script>
+    </head>
+    <body>
+	
+		{% include "web/header.html" %}
+		<div class="searchportion">
+		<h2>Find Doctor In Your Locality: </h2>	
+		
+		<form method="" action="">	
+				<div class="fleft">
+					<select id="cd-dropdown" class="cd-select">
+						<option value="-1" selected>Select City</option>
+						<option value="1" class="icon-tux">Chandigarh</option>
+						<option value="2" class="icon-finder">Mohali</option>
+						<option value="3" class="icon-windows">Hoshiarpur</option>
+						<option value="4" class="icon-android">Jalandhar</option>
+
+				</select>
+		
+				</div>
+					<div class="fleft">
+					<select id="cd-dropdown" class="cd-select">
+						<option value="-1" selected>Select Speciality</option>
+						<option value="1" class="icon-tux">Heart Specialist</option>
+						<option value="2" class="icon-finder">Skin Specialist</option>
+						<option value="3" class="icon-windows">Cancer Specialist</option>
+						<option value="4" class="icon-android">Eye Specialist</option>
+
+					</select>
+		
+					</div>
+				<input id="round" type="submit" value="Search" />
+		</form>
+		<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>-->
+		<script type="text/javascript" src="{% static 'js/jquery.dropdown.js' %}"></script>
+		<script type="text/javascript">
+			
+			$( function() {
+				
+				$( '#cd-dropdown' ).dropdown();
+
+			});
+
+		</script>
+				<script type="text/javascript">
+			
+			$( function() {
+				
+				$( '#cd-dropdown' ).dropdown();
+
+			});
+
+		</script>
+		</div>
+		<div class="clearfix"></div>
+		
+		
+        <!--
+	<div id="sliderFrame">
+        <div id="slider">
+            <img src="/static/img/slider-1.jpg" />
+            <img src="/static/img/slider-2.jpg" />
+            <img src="/static/img/slider-3.jpeg" />
+            <img src="/static/img/slider-4.jpg" />
+        </div>
+Custom navigation buttons on both sides-->
+      <!--  <div class="group1-Wrapper">
+            <a onclick="imageSlider.previous()" class="group1-Prev"></a>
+            <a onclick="imageSlider.next()" class="group1-Next"></a>
+        </div>-->
+        <!--nav bar-->
+
+
+<!--
+        <section id="slider" class="hidden-phone">
+            <div id="myCarousel" class="carousel slide">
+                <div class="carousel-inner">
+                <div class="item active">
+                    <img src="/static/img/sliderImage1.jpg" alt="" style="">
+                   <!-- <div class="carousel-caption">
+                        <div class="carousel-caption-big span25">
+                            <span class="medicalSymbol pull-left">
+                                <img src="/static/img/medicalSymbol.png" alt="" />
+                            </span>
+                            <span class="medicalSymbol pull-right">
+                                <img src="/static/img/medicalSymbol.png" alt="" />
+                            </span>
+                            <h4><span>illumine</span> - Doctors and Health Care Responsive Theme</h4>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        </div>
+                    </div>
+                  </div>
+                    {% for b in banner %}
+                  <div class="item">
+                    <img src="{{media}}/{{b.banner}}" alt="" style="">
+                    
+                  </div>{% endfor %}
+                </div>
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+              </div>
+            <section class="carouselBottom">
+                <div class="carousel-caption">
+                    <section class="row center">
+                        <div class="carousel-caption-big span25">
+                            <span class="medicalSymbol pull-left">
+                                <img src="/static/img/medicalSymbol.png" alt="" />
+                            </span>
+                            <span class="medicalSymbol pull-right">
+                                <img src="/static/img/medicalSymbol.png" alt="" />
+                            </span>
+							{% for b in banner %}
+                            <h4><span>{{b.bannername}}</span>{%endfor%} </h4>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        </div>
+                    </section>
+                    </div>
+            </section>
+        </section>-->
+        <section id="main">
+            <section class="row center">
+                <section class="span25 main-wrapper">
+                    <section class="content span16">
+                        <section class="span8 infoBox">
+                            <h1>Common Diseases</h1>
+                            <ul>
+								{% for symp in disease %}
+                                <li><a href="{% url 'diseaseinfo' symp.id %}" title="Laboratory & Pathology"><i class="bullet"></i>{{symp.Symptom_Name}}</a></li>
+								{% endfor %}
+                            </ul>
+                            <!--<a href="#" title="More" class="more">More Services <i></i></a>-->
+                        </section>
+                        <section class="span8 bigInfoBox">
+                            <hgroup>
+                                <h2>Make an Appointment in</h2>
+                                <h1>illumine</h1>
+                            </hgroup>
+                            
+                            <form action="{% url 'disease' %}" method="post">{% csrf_token %}
+										
+
+
+							
+							<label for="id_Name"></label>
+							<input id="id_Name" type="text" required="true" name="Name" maxlength="100" placeholder="Full Name" class="span7 greyInput">
+							<label for="id_Email"></label>
+							<input id="id_Email" type="email" required="true" name="Email" maxlength="70" placeholder="Email Address" class="span7 greyInput">
+							<label for="id_Subject"></label>
+							<input id="id_Subject" type="text" required="true" name="Subject" maxlength="100" placeholder="Subject" class="span7 greyInput">
+							<label for="id_Datetime"></label>
+							<input id="id_Datetime" type="text" required="true" name="Datetime"  placeholder="Date" class="span7 greyInput"> 
+							<!--<input id="id_Datetime" type="text" name="Datetime"  placeholder="Date" class=" greyInput1 id_Datetime">--> 
+
+ <!--
+
+                                <input type="text" name="fullName" placeholder="Full Name" class="span7 greyInput" />
+                                <input type="text" name="phone" placeholder="Phone Number" class="span7 greyInput" />
+                                <input type="email" name="email" placeholder="Email Address" class="span7 greyInput" />
+                                
+                                <div class="customSelect left">
+                                    <input type="text" name="signupName" value="" placeholder="Day" class="greyInput span3"> <button>Open</button>
+                                    <div class="options" style="display: none; ">
+                                        <ul>
+                                            <li><a href="#">01</a></li>
+                                            <li><a href="#">02</a></li>
+                                            <li><a href="#">03</a></li>
+                                            <li><a href="#">December</a></li>
+                                            <li><a href="#">December</a></li>
+                                            <li><a href="#">December</a></li>
+                                            <li><a href="#">December</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="customSelect right">
+                                    <input type="text" name="signupName" value="" placeholder="Time" class="greyInput span3"> <button>Open</button>
+                                    <div class="options" style="display: none; ">
+                                        <ul>
+                                            <li><a href="#">01</a></li>
+                                            <li><a href="#">02</a></li>
+                                            <li><a href="#">03</a></li>
+                                            <li><a href="#">December</a></li>
+                                            <li><a href="#">December</a></li>
+                                            <li><a href="#">December</a></li>
+                                            <li><a href="#">December</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                               
+                                <div class="customSelect">
+                                    <input type="text" name="signupName" value="" placeholder="Month" class="greyInput span7"> <button>Open</button>
+                                    <div class="options" style="display: none; ">
+                                        <ul>
+                                            <li><a href="#">October</a></li>
+                                            <li><a href="#">November</a></li>
+                                            <li><a href="#">December</a></li>
+                                            <li><a href="#">December</a></li>
+                                            <li><a href="#">December</a></li>
+                                            <li><a href="#">December</a></li>
+                                            <li><a href="#">December</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="customSelect">
+                                    <input type="text" name="signupName" value="" placeholder="Select Center" class="greyInput span7"> <button>Open</button>
+                                    <div class="options" style="display: none; ">
+                                        <ul>
+                                            <li><a href="#">Center 1</a></li>
+                                            <li><a href="#">Center 2</a></li>
+                                            <li><a href="#">Center 3</a></li>
+                                            <li><a href="#">Center 3</a></li>
+                                            <li><a href="#">Center 3</a></li>
+                                            <li><a href="#">Center 3</a></li>
+                                            <li><a href="#">Center 3</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                               
+                               -->
+                                <input type="submit" name="submit" value="Submit" class="customButton"/>
+                            </form>
+                            {% if message %}
+                            <script> 
+                            alert("Appointment Sent!!");
+                            </script>
+                            {% endif %}
+                        </section>
+                        <section class="largeBox doctorSlider hidden-tablet hidden-phone">
+                            <h1 class="pull-left">Meet our doctors</h1>
+                            <a href="/web/doctors" title="View all doctors" class="pull-right link">View all doctors .. </a>
+                            <div class="slider">
+                                <a href="#" title="Scroll Left" class="controls left">Left</a>
+                                <a href="#" title="Scroll Right" class="controls right">Right</a>
+                                <section class="coverFlow">
+                                    <ul>
+                                       {% for doc in docprofile %} <li>
+                                            <figure>
+                                                <img src="{{media}}/{{doc.image}}" alt="" />
+                                            </figure>
+                                            <section class="info">
+                                                <h2>{{doc.name}}</h2>
+                                                <h3>{{doc.Qualification}}</h3>
+                                                <a href="{% url 'drprofile' doc.id %}" title="more" class="customButton smallRadius">Read More About {{doc.name}}</a>
+                                            </section>
+                                        </li> {% endfor %}
+                                    </ul>
+                                </section>
+                                
+                            </div>
+                        </section>
+                         <section class="largeBox">
+                            <h1 class="pull-left">illumine Latest News and HEALTH TIPS</h1><br />
+    {% for ne in latest %}   <section class="span8 figureArticle">
+                                <article>
+                                    <figure>
+                                        <img src="{{media}}/{{ne.Image_src}}" alt="" />
+                                        <div class="overlay"></div>
+                                    </figure>
+                                    <div class="info">
+                                        <p><a href="{% url 'latestnews' ne.id %}" title="news">{{ ne.Title }}</a></p>
+                                        <span>{{ ne.Date|date:"d/M/Y" }} | Health Tips</span>
+                                    </div> 
+									<script type="text/javascript" src="{% static 'js/html5lightbox.js' %}"></script>
+                                </article>
+                                <div class="hr"></div>
+                                
+                            </section>{% endfor %}
+ 
+                        </section>
+                      </section>
+                    <aside class="span8">
+   
+					<section class="span8 infoBox events">
+                            <h1>Upcoming events</h1>
+                            <ul>
+								{% for eve in events %} 
+                                <li>
+                                    <div class="date"><span class="day">{{ eve.Event_Date|date:"d"}}</span><span class="month">{{ eve.Event_Date|date:"M"}}</span></div>
+                                    <p>{{ eve.Event_Title }} </p>
+                                </li>
+								
+								{% endfor %}        
+                            </ul>
+                           <!-- <a href="#" title="View Event Calendar" class="customButton">View Event Calendar</a>-->
+                        </section>
+                        
+                        <!-- Today video Health and tip s-->
+                        <section class="span8 asideBox">
+                            <h1>Today’s Video Health Tips</h1>
+                           {% for vd in video %} <div class="inside span8">
+                                <figure>
+                                    <img src="{{media}}/{{vd.Image_src}}" alt="" />
+                                    <div class="overlay"></div>
+                                    <a href="{{ vd.Video_source }}" class="html5lightbox" title="Play">Play</a>
+                                </figure>
+                                <div class="info">
+                                    <p>{{ vd.Video_Name }}</p>
+                                    <a href="/web/videohealthtips" title="More Videos" class="customButton">More Videos</a>
+                                </div>
+                            </div>	
+                           {% endfor %}						
+                        </section>
+                         
+                           <section class="span8 asideBox">
+                            <div class="inside span8 call">
+                                <h1>Campus Direction Assistances @ 24/7</h1>
+                                <figure class="callCenter hidden-tablet">
+                                    <img src="/static/img/callCenterGirl.png" alt="" />
+                                </figure>
+                                <div class="numbers">
+								{% for p in site %} 
+                                    <p>Email: <span>{{p.email}}</span> </p>
+                                    <p>Phone: <span>{{p.contact}} </span></p>
+                                  
+                              {% endfor %}  </div>
+                            </div>
+                        </section>
+
+                    </aside>
+                    <div class="separator"></div>
+                    <section class="span25 main-wrapper bottomSection hidden-phone">
+                        <section class="span15 left">
+                            <h1>Our Latest Tweets</h1>
+                            <div class="controls-div pull-right">
+                                <a href="#" title="Previous" class="controls prev">Previous</a>
+                                <a href="#" title="Next" class="controls next">Next</a>
+                            </div>
+                            <section class="span14 coverFlow">
+                                <ul>
+                                    <li class="span14">
+                                        <figure>
+                                            <img src="/static/img/doctorSample.png" alt="" />
+                                            <div class="overlay"></div>
+                                        </figure>
+                                        <div class="info">
+                                            <p>The point of using Lorem Ipsum is that it has a more-or-less normal  fdistribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                                            <span class="customButton smallRadius pull-right">Charlsey Shrader (New York)</span>
+                                        </div>
+                                    </li>
+                                    <li class="span14">
+                                        <figure>
+                                            <img src="/static/img/doctorSample.png" alt="" />
+                                            <div class="overlay"></div>
+                                        </figure>
+                                        <div class="info">
+                                            <p>The point of using Lorem Ipsum is that it has a more-or-less normal  fdistribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                                            <span class="customButton smallRadius pull-right">Charlsey Shrader (New York)</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </section>
+                        </section>
+                        <section class="span9 right">
+                            <h1>Our Latest Tweets</h1>
+                            <div class="twitterFeed">
+                                <p>Doctors and Health care Responsive Theme in Themforest, Stay Tuned on more Updates. </p>
+                                <span>6 hours ago</span>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+		
+	
+        <footer><!--
+            <section class="row center">
+                <section class="span25">
+                    <section class="span6 footerBox">
+                        <h1 class="customButton smallRadius">Quick links</h1>
+                        <h2>Doctors and Health Care Theme</h2>
+                        <ul>
+                            <li><a href="#" title=""><i></i>Home</a></li>
+                            <li><a href="#" title=""><i></i>Medical Services</a></li>
+                            <li><a href="#" title=""><i></i>Our Doctor</a></li>
+                            <li><a href="#" title=""><i></i>Patients</a></li>
+                            <li><a href="#" title=""><i></i>News & Events</a></li>
+                            <li><a href="#" title=""><i></i>Visitors</a></li>
+                            <li><a href="#" title=""><i></i>Videos</a></li>
+                            <li><a href="#" title=""><i></i>Location</a></li>
+                        </ul>
+                    </section>
+                    <section class="span6 footerBox">
+                        <h1 class="customButton smallRadius">Medical Services</h1>
+                        <h2>illum Specialised Services</h2>
+                        <ul>
+                            <li><a href="#" title=""><i></i>Laboratory & Pathology</a></li>
+                            <li><a href="#" title=""><i></i>Radiation Medicine</a></li>
+                            <li><a href="#" title=""><i></i>Primary Care</a></li>
+                            <li><a href="#" title=""><i></i>Radiology</a></li>
+                            <li><a href="#" title=""><i></i>General Surgery</a></li>
+                            <li><a href="#" title=""><i></i>Heart Surgery</a></li>
+                            <li><a href="#" title=""><i></i>Infectious Diseases</a></li>
+                        </ul>
+                    </section>
+                    <section class="span6 footerBox">
+                        <h1 class="customButton smallRadius">New Born Babies</h1>
+                        <h2>illum Photo Gallery (Flickr Widget)</h2>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <a href="#" title="View more photos" class="more">View more photos</a>
+                    </section>
+                    <section class="span6 footerBox">
+                        <h1 class="customButton smallRadius">Quick Contact</h1>
+                        <h2>Doctors and Health Care Theme</h2>
+                        <form action="http://teothemes.com/html/Illumine/process.php" method="post">
+                            <input type="text" name="name" placeholder="Name" class="blackInput span6"/>
+                            <input type="email" name="email" placeholder="Email" class="blackInput span6"/>
+                            <textarea placeholder="Message" class="span6"></textarea>
+                            <input type="submit" name="submit" value="Submit" class="customButton"/>
+                        </form>
+                    </section>
+                </section>
+            </section> -->
+
+            {% include "web/footer.html" %}
+
+
+        </footer>
+        <section id="copyright">
+            <section class="row center">
+                <section class="span25">
+				<center>
+                    <p>COPYRIGHT © 2014 illumine. Developed by <a href="http://ghrix.com/"><b>Team-Ghrix</b></a></p>
+                </center>
+				</section>	
+            </section>
+        </section>
+       
+        <script>
+            if(document.body.offsetWidth < 400) {
+                viewport = document.querySelector("meta[name=viewport]");
+                viewport.setAttribute('content', 'width=device-width; minimum-scale=0.75, initial-scale=0.75; maximum-scale=0.75; user-scalable=0;');
+            }
+        </script>
+
+		
+    </body>
+</html>

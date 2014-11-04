@@ -1,0 +1,145 @@
+{% load static from staticfiles %}
+<link rel="stylesheet" href="/static/css/sociallink.css" />
+
+
+<header>
+		<div id="masterlogo">
+		<!--
+		 <a href="/web/index/" title="Illumine - Home page">
+			{% for p in site %}
+			 <img src="{{media}}/{{p.logo}}" alt="" />
+			 {% endfor %}
+		</a>-->
+		 <img src="/static/img/master_logo.png" alt="" />
+		</div>
+		<div id="letters">
+		 <div id="letter-container" class="letter-container">
+				<h2>
+					<a href="/web/index/">findmeadoc.in</a>
+				</h2>
+			</div>
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+			<script type="text/javascript" src="{% static 'js/jquery.lettering.js' %}"></script>
+			<script type="text/javascript">
+				$(function() {
+					$("#letter-container h2 a").lettering();
+				});
+			</script>
+		</div>
+		
+		<div>
+		
+		
+		</div>
+		
+		
+		<div class="sociallinks">
+		<div class="as">
+	
+			Social-connect:
+			{% for p in site %}
+			<a href="//{{p.twitterlink}}" class="icon-1 twitter"><i class="icon-twitter"></i><span></span></a>
+			<a href="//{{p.facebooklink}}" class="icon-1 facebook"><i class="icon-facebook"></i><span></span></a>
+			<a href="//{{p.googlepluslink}}" class="icon-1 google-plus"><i class="icon-google-plus"></i><span></span></a>
+			{% endfor %}
+		</div></div>
+			<!--
+            <section class="row center">
+			
+                <section class="span25">
+
+                    <section class="left pull-left span6">
+
+				
+                        <figure id="logo">
+                            <a href="/web/index/" title="Illumine - Home page">
+									
+								{% for p in site %}
+                                <img src="{{media}}/{{p.logo}}" alt="" />
+                                {% endfor %}
+                            </a>
+                        </figure>
+                    </section>
+                    <section class="right pull-right span18">
+                        <section class="letterPressed pull-right">
+                            <span class="left"></span>
+                            <span class="middle">FREE consultation {% for p in site %} {{p.contact}} {% endfor %}</span> 
+                            <span class="right"></span>
+                        </section>
+                        <section class="info pull-right">
+                            <ul>
+                                <li><a href="#" title="About us"><span class="left"></span><span class="middle">About us</span><span class="right"></span></a></li>
+                                <!--<li><a href="#" title="Carrier"><span class="left"></span><span class="middle">Carrier</span><span class="right"></span></a></li>
+                                <li><a href="/web/contactUs" title="Contact us"><span class="left"></span><span class="middle">Contact us</span><span class="right"></span></a></li>
+                            </ul>
+                        </section>
+                        <section class="socialLinks pull-right">
+                            <ul>
+                                <li><a href="https://www.facebook.com" title="Facebook" class="facebook">Facebook</a></li>
+                                <li><a href="https://www.twitter.com" title="Twitter" class="twitter">Twitter</a></li>
+                                <li><a href="https://www.plus.google.com" title="Google+" class="googleplus">Google+</a></li>
+                            </ul>
+                            <span>Social Connect:</span>
+                        </section>
+                    </section>
+                </section>
+            </section>
+			-->
+			
+			        <nav id="mainNav">
+            <section class="row center">
+                <section class="span25">
+			<div id="menucontainer">	
+				 <ul id="nav">
+					<li><a href="/web/index/" title="Home">Home</a></li>
+					<li><a href="/web/symptoms/" title="Symptom Checker">Symptom Checker</a></li>
+					<li><a href="/web/doctors/" title="Doctors">Doctors</a></li>
+					<li><a href="/web/hospitals/" title="Hospitals">Hospitals</a></li>
+					<li><a href="/web/location/" title="Location">Location</a></li>
+					<li><a href="/web/contactUs/" title="Contact">Contact</a></li>
+				</ul>
+			</div>
+				
+<!--  
+                    <ul class="pull-left span19 hidden-phone">
+					
+
+					
+                        <li class="active"><a href="/web/index/" title="Home">Home</a></li>
+						<li><a href="/web/symptoms/" title="Symptom Checker">Symptom Checker</a></li>
+                        <li><a href="/web/doctors/" title="Doctors">Doctors</a></li>
+                        <li><a href="/web/hospitals/" title="Hospitals">Hospitals</a></li>
+                        <li><a href="/web/location/" title="Location">Location</a></li>
+                        <li><a href="/web/contactUs/" title="Contact">Contact</a></li>
+                         Pages category on menubar
+                        <li>
+                            <a href="#" title="Pages">Pages</a>
+                            <div class="dropdown">
+                                <ul>
+                                    <li><a href="about_us.html" title="Medical Services">About us</a></li>
+                                    <li><a href="news-detail.html" title="News detail">News detail</a></li>
+                                    <li><a href="news-v2.html" title="News v2">News v2</a></li>
+                                    <li><a href="news.html" title="News">News</a></li>
+                                    <li><a href="patients.html" title="Patients">Patients</a></li>
+                                    <li><a href="videos.html" title="Videos">Videos</a></li>
+                                    <li><a href="visitors.html" title="Visitors">Visitors</a></li>
+                                    <li><a href="medicalService-v2.html" title="Services">Services</a></li>
+                                    <li><a href="medicalService.html" title="Services v2">Services v2</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                       
+
+                    </ul>-->
+						<form id="serachForm" class="pull-right span5" method="GET" action="{% url 'hsp' %}">
+
+                       <input type="text" name="q" placeholder="Doctors City Wise" required="true"/>
+
+                        <input type="submit" name="search1" value="GO" />
+                       
+                    </form>
+                </section>
+            </section>
+        </nav>
+			
+        </header>

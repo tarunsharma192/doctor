@@ -1,0 +1,178 @@
+/* Wrapper */
+.as [class^="icon-"], [class*=" icon-"] {
+  background-image: none;
+  
+}
+.sociallinks{
+	color: #fff;
+    float: right;
+    height: auto;
+    margin-right: 11%;
+    margin-top: 4%;
+    width: 22%;
+}
+
+.icon-1 {
+	#background-image:url("../img/footer_bg.png");
+	background-color: #0094D0;
+	border-radius: 2.6rem;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1.3rem;
+	height: 2.6rem;
+	line-height: 2.6rem;
+	margin: 0 1%;
+	position: relative;
+	text-align: center;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	width: 2.6rem;
+}
+
+/* Circle */
+.icon-1 span {
+	border-radius: 0;
+	display: block;
+	height: 0;
+	left: 50%;
+	margin: 0;
+	position: absolute;
+	top: 31%;
+	-webkit-transition: all 0.3s;
+	   -moz-transition: all 0.3s;
+	     -o-transition: all 0.3s;
+	        transition: all 0.3s;
+	width: 0;
+}
+.icon-1:hover span {
+	width: 2.6rem;
+	height: 2.6rem;
+	border-radius: 2.6rem;
+	margin: -1.3rem;
+}
+
+/* Icons */
+.icon-1 i {
+	background: none;
+	color: white;
+	height: 2.6rem;
+	left: 0;
+	line-height: 1.6rem;
+	position: absolute;
+	top: 0;
+	-webkit-transition: all 0.3s;
+	   -moz-transition: all 0.3s;
+	     -o-transition: all 0.3s;
+	        transition: all 0.3s;
+	width: 2.6rem;
+	z-index: 10;
+}
+
+
+
+
+
+.twitter span {
+	background-color: #1E7BAA;
+}
+.facebook span {
+	background-color: #1E7BAA;
+}
+.google-plus span {
+	background-color: #1E7BAA;
+}
+
+
+
+
+.icon-1.icon-twitter {
+	color: #fff;
+}
+.icon-1 .icon-facebook {
+	color: #fff;
+}
+
+.icon-1 .icon-google-plus {
+	color: #fff;
+}
+
+
+
+
+
+.icon-1:hover .icon-facebook,
+.icon-1:hover .icon-twitter,
+.icon-1:hover .icon-google-plus
+{
+	color: white;
+	
+}
+
+@media all and (max-width: 680px) {
+  .icon-button {
+    border-radius: 1.6rem;
+    font-size: 0.8rem;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    width: 1.6rem;
+  }
+
+  .icon-button:hover span {
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 1.6rem;
+    margin: -0.8rem;
+  }
+
+  /* Icons */
+  .icon-button i {
+	  height: 1.6rem;
+	  line-height: 1.6rem;
+	  width: 1.6rem;
+  }
+  body {
+
+	  padding: 10px;
+  }
+  .pinterest {
+   display: none; 
+  }
+
+}
+
+/* ICOMOON Starts Here */
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot');
+	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.ttf') format('truetype'),
+		url('fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.icon-home, .icon-stumbleupon, .icon-pencil, .icon-tag, .icon-clock, .icon-users, .icon-user, .icon-disk, .icon-lab, .icon-arrow-left, .icon-mail, .icon-google-plus, .icon-facebook, .icon-twitter, .icon-feed, .icon-delicious, .icon-stackoverflow, .icon-pinterest, .icon-html5, .icon-css3 {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	
+}
+
+.icon-google-plus:before {
+	content: "\e010";
+}
+.icon-facebook:before {
+	content: "\e002";
+}
+.icon-twitter:before {
+	content: "\e003";
+}

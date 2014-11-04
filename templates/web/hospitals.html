@@ -1,0 +1,348 @@
+{% load static from staticfiles %}
+{{request.HTTP_HOST}}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Illumine</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="viewport" content="width=320, initial-scale=0.75, minimum-scale=0.75, maximum-scale=1.0">
+        <link rel="icon" type="image/png" href="/static/img/favicon.png" />
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css" />
+                <link rel="stylesheet" type="text/css" href="{% static 'css/style6.css' %}" />
+        <link href='http://fonts.googleapis.com/css?family=Terminal+Dosis|Niconne' rel='stylesheet' type='text/css' />
+        
+        <script type="text/javascript" src="{% static 'js/jquery-1.8.2.min.js' %}"></script>
+        <!--[if lt IE 9]>
+            <link href="assets/css/ie8.css" rel="stylesheet" type="text/css" />
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+          <![endif]-->
+        <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.placeholder.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.mobilemenu.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+		
+    </head>
+    <body>
+        {% include "web/header.html" %}
+        <section id="slider" class="static">
+            {% for b in banner %}
+            <img src="{{media}}/{{b.hospitalbanner}}" alt="" style="">
+            {% endfor %}
+            
+        </section>
+        <section id="main" class="normalPage">
+            <section class="row center">
+                <section class="span25 main-wrapper">
+                    <div class="title span9">
+                <h1 class="span8">Our Hospitals</h1>
+                <h2 class="span8">Doctors & Health Care Responsive Theme.</h2>
+            </div>
+                    <div class="cornerShadow left"></div>
+                    <div class="cornerShadow right"></div>
+                    <section class="content span16">
+                        <section class="top">
+                            <h2 class="pull-left">Our Hospitals</h2>
+                            <p class="pull-left">Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                        </section>
+                        <ul class="doctors grid">
+
+
+<!--
+						{% for h in contacts %}
+						
+						
+                            <li class="span8">
+                                <figure>
+                                    <img src="{{media}}/{{h.image}}" alt="" />
+                                    <div class="overlay"></div>
+                                </figure>
+								
+                                <div class="info">
+                                    <h1>{{h.Hospitalname}} </h1>
+                                    <h3>Pediatric Surgery</h3>
+                                  
+                                  
+                                   <a href="{% url 'hospitalprofile' h.id %}" title="Read more"
+                                   
+                                    
+                                   class="customButton smallRadius">Read More About {{h.Hospitalname}} </a>
+                                </div>
+                            </li> 
+                            {% endfor %}
+
+						
+		-->						
+													
+						{% for h in contacts %}
+						
+						{% if h.Hospitalname %}
+                            <li class="span8">
+                                <figure>
+                                    <img src="{{media}}/{{h.image}}" alt="" />
+                                    <div class="overlay"></div>
+                                </figure>
+								
+                                <div class="info">
+                                    <h1>{{h.Hospitalname}} </h1>
+                                    <h3>Pediatric Surgery</h3>
+                                  
+                                  
+                                   <a href="{% url 'hospitalprofile' h.id %}" title="Read more"
+                                   
+                                    
+                                   class="customButton smallRadius">Read More About {{h.Hospitalname}} </a>
+                                </div>
+                            </li> 
+                            {% endif %}
+                            
+                            {% if h.name %}
+                           
+                            <li class="span8">
+                                <figure>
+                                    <img src="{{media}}/{{h.image}}" alt="" />
+                                    <div class="overlay"></div>
+                                </figure>
+								
+                                <div class="info">
+                                    <h1>{{h.name}} </h1>
+                                    <h3>Pediatric Surgery</h3>
+                                  
+                                  
+                                   <a href="{% url 'drprofile' h.id %}" title="Read more"
+                                   
+                                    
+                                   class="customButton smallRadius">Read More About {{h.name}} </a>
+                                </div>
+                            </li> 
+							 {% endif %}
+							{% endfor %}
+					
+							
+							
+
+                            <li class="listSeparator"></li>
+                        </ul>
+                        
+                     
+                        <section class="pagination">
+							
+                            {% if contacts.has_previous %}
+                            <a href="?q={{search}}&page={{ contacts.previous_page_number }}" title="Previous" class="prev pull-left customButton"><i></i> Previuos</a>
+                            {% endif %}
+                           
+                            <span class="current">
+							Page {{ contacts.number }} of {{ contacts.paginator.num_pages }}.
+							</span>
+                           
+                           {% if contacts.has_next %}
+                            <a href="?q={{search}}&page={{ contacts.next_page_number }}" title="Next" class="next pull-right customButton">Next <i></i></a>
+                            {% endif %}
+                        </section>
+                        
+                        
+                    </section>
+                    <aside class="span8">
+                        
+                        <section class="span8 asideBox">
+                            <h1>Today’s Video Health Tips</h1>
+                            <div class="inside span8">{% for vd in video %}
+                                <figure>
+                                    <img src="{{media}}/{{vd.Image_src}}" alt="" />
+                                    <div class="overlay"></div>
+                                    <a href="{{ vd.Video_source }}" class="html5lightbox" title="Play">Play</a>
+									
+                                </figure>
+                                <div class="info">
+                                    <p>{{ vd.Video_Name }}</p>
+									
+                                    <a href="/web/videohealthtips" title="More Videos" class="customButton">More Videos</a>
+                                </div>{% endfor %}
+                                <script type="text/javascript" src="{% static 'js/html5lightbox.js' %}"></script>
+                            </div>
+                        </section>
+                        <section class="span8 bigInfoBox">
+                         <!--   <hgroup>
+                                <h2>Make an Appointment in</h2>
+                                <h1>illumine</h1>
+                            </hgroup>
+                            
+                            <form action="#" method="post">
+                                <input type="text" name="fullName" placeholder="Full Name" class="span7 greyInput" />
+                                <input type="text" name="phone" placeholder="Phone Number" class="span7 greyInput" />
+                                <input type="email" name="email" placeholder="Email Address" class="span7 greyInput" />
+                                
+                                <div class="customSelect left">
+                                    <input type="text" name="signupName" value="" placeholder="Day" class="greyInput span3"> <button>Open</button>
+                                    <div class="options" style="display: none; ">
+                                        <ul>
+                                            <li><a href="#">01</a></li>
+                                            <li><a href="#">02</a></li>
+                                            <li><a href="#">03</a></li>
+                                            <li><a href="#">December</a></li>
+                                            <li><a href="#">December</a></li>
+                                            <li><a href="#">December</a></li>
+                                            <li><a href="#">December</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="customSelect right">
+                                    <input type="text" name="signupName" value="" placeholder="Time" class="greyInput span3"> <button>Open</button>
+                                    <div class="options" style="display: none; ">
+                                        <ul>
+                                            <li><a href="#">01</a></li>
+                                            <li><a href="#">02</a></li>
+                                            <li><a href="#">03</a></li>
+                                            <li><a href="#">December</a></li>
+                                            <li><a href="#">December</a></li>
+                                            <li><a href="#">December</a></li>
+                                            <li><a href="#">December</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="customSelect">
+                                    <input type="text" name="signupName" value="" placeholder="Month" class="greyInput span7"> <button>Open</button>
+                                    <div class="options" style="display: none; ">
+                                        <ul>
+                                            <li><a href="#">October</a></li>
+                                            <li><a href="#">November</a></li>
+                                            <li><a href="#">December</a></li>
+                                            <li><a href="#">December</a></li>
+                                            <li><a href="#">December</a></li>
+                                            <li><a href="#">December</a></li>
+                                            <li><a href="#">December</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="customSelect">
+                                    <input type="text" name="signupName" value="" placeholder="Select Center" class="greyInput span7"> <button>Open</button>
+                                    <div class="options" style="display: none; ">
+                                        <ul>
+                                            <li><a href="#">Center 1</a></li>
+                                            <li><a href="#">Center 2</a></li>
+                                            <li><a href="#">Center 3</a></li>
+                                            <li><a href="#">Center 3</a></li>
+                                            <li><a href="#">Center 3</a></li>
+                                            <li><a href="#">Center 3</a></li>
+                                            <li><a href="#">Center 3</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                
+                                <input type="submit" name="submit" value="Submit" class="customButton"/>
+                            </form>
+                            -->
+                        </section>
+                        <section class="largeBox">
+                            <h1 class="pull-left">Latest News and HEALTH TIPS</h1><br />
+                            <section class="span8 figureArticle">
+                                <article>{% for ne in latest %}
+                                    <figure>
+                                        <img src="{{media}}/{{ne.Image_src}}" alt="" />
+                                        <div class="overlay"></div>
+                                    </figure>
+                                    <div class="info">
+                                        <p><a href="{% url 'latestnews' ne.id %}" title="news">{{ ne.Title }}</a></p>
+                                        <span>{{ ne.Date|date:"d/M/Y" }}| Health Tips</span>
+                                    </div>{% endfor %}
+                                </article>
+                                <div class="hr"></div>
+                                <article>
+                                    <figure>
+                                        <img src="/static/img/doctorSample.png" alt="" />
+                                        <div class="overlay"></div>
+                                    </figure>
+                                    <div class="info">
+                                        <p><a href="#" title="news">Doctors and Health care Responsive Theme.</a></p>
+                                        <span>Aug 06, 2012 | Health Tips</span>
+                                    </div>
+                                </article>
+                            </section>
+                            <a href="/web/morenews/" title="More news" class="customButton">More News & Health Tips</a>
+                        </section>
+                    
+                      <section class="span8 asideBox">
+                            <div class="inside span8 call">
+                                <h1>Campus Direction Assistances @ 24/7</h1>
+                                <figure class="callCenter hidden-tablet">
+                                    <img src="/static/img/callCenterGirl.png" alt="" />
+                                </figure>
+                                <div class="numbers">
+                                   {% for p in site %} 
+                                    <p>Email: <span>{{p.email}}</span> </p>
+                                    <p>Phone: <span>{{p.contact}} </span></p>
+                                  
+                              {% endfor %}
+                                </div>
+                            </div>
+                       </section>
+                       
+                    </aside>
+                    <div class="separator"></div>
+                    <section class="span25 bottomSection hidden-phone">
+                        <section class="span15 left">
+                            <h1>Our Latest Tweets</h1>
+                            <div class="controls-div pull-right">
+                                <a href="#" title="Previous" class="controls prev">Previous</a>
+                                <a href="#" title="Next" class="controls next">Next</a>
+                            </div>
+                            <section class="span14 coverFlow">
+                                <ul>
+                                    <li class="span14">
+                                        <figure>
+                                            <img src="/static/img/doctorSample.png" alt="" />
+                                            <div class="overlay"></div>
+                                        </figure>
+                                        <div class="info">
+                                            <p>The point of using Lorem Ipsum is that it has a more-or-less normal  fdistribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                                            <span class="customButton smallRadius pull-right">Charlsey Shrader (New York)</span>
+                                        </div>
+                                    </li>
+                                    <li class="span14">
+                                        <figure>
+                                            <img src="/static/img/doctorSample.png" alt="" />
+                                            <div class="overlay"></div>
+                                        </figure>
+                                        <div class="info">
+                                            <p>The point of using Lorem Ipsum is that it has a more-or-less normal  fdistribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                                            <span class="customButton smallRadius pull-right">Charlsey Shrader (New York)</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </section>
+                        </section>
+                        <section class="span9 right">
+                            <h1>Our Latest Tweets</h1>
+                            <div class="twitterFeed">
+                                <p>Doctors and Health care Responsive Theme in Themforest, Stay Tuned on more Updates. </p>
+                                <span>6 hours ago</span>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <footer>
+            {% include "web/footer.html" %}
+        </footer>
+        <section id="copyright">
+            <section class="row center">
+                <section class="span25">
+                    <p>COPYRIGHT © 2012 illumine. Developed by <a href="http://teothemes.com/">TeoThemes</a></p>
+                </section>
+            </section>
+        </section>
+        <script>
+            if(document.body.offsetWidth < 400) {
+                viewport = document.querySelector("meta[name=viewport]");
+                viewport.setAttribute('content', 'width=device-width; minimum-scale=0.75, initial-scale=0.75; maximum-scale=0.75; user-scalable=0;');
+            }
+        </script>
+    </body>
+</html>

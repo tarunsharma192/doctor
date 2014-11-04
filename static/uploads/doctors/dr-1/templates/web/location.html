@@ -1,0 +1,292 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Illumine</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="viewport" content="width=320, initial-scale=0.75, minimum-scale=0.75, maximum-scale=1.0">
+        <link rel="icon" type="image/png" href="/static/img/favicon.png" />
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css" />
+        
+        
+        <script type="text/javascript" src="{% static 'js/jquery-1.8.2.min.js' %}"></script>
+        <!--[if lt IE 9]>
+            <link href="assets/css/ie8.css" rel="stylesheet" type="text/css" />
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+          <![endif]-->
+        <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.placeholder.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.mobilemenu.js' %}"></script>
+    </head>
+    <body>
+        <header>
+            <section class="row center">
+                <section class="span25">
+                    <section class="left pull-left span6">
+                        <figure id="logo">
+                            <a href="http://teothemes.com/" title="Illumine - Home page">
+                                <img src="/static/img/logo.png" alt="" />
+                            </a>
+                        </figure>
+                    </section>
+                    <section class="right pull-right span18">
+                        <section class="letterPressed pull-right">
+                            <span class="left"></span>
+                            <span class="middle">FREE consultation 0123 456 7890</span> 
+                            <span class="right"></span>
+                        </section>
+                        <section class="info pull-right">
+                            <ul>
+                                <li><a href="#" title="About us"><span class="left"></span><span class="middle">About us</span><span class="right"></span></a></li>
+                                <li><a href="#" title="Carrier"><span class="left"></span><span class="middle">Carrier</span><span class="right"></span></a></li>
+                                <li><a href="#" title="Contact us"><span class="left"></span><span class="middle">Contact us</span><span class="right"></span></a></li>
+                            </ul>
+                        </section>
+                        <section class="socialLinks pull-right">
+							<ul>
+                                <li><a href="#" title="Facebook" class="facebook">Facebook</a></li>
+                                <li><a href="#" title="Twitter" class="twitter">Twitter</a></li>
+                                <li><a href="#" title="Google+" class="googleplus">Google+</a></li>
+                            </ul>
+                            <span>Social Connect:</span>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </header>
+        <nav id="mainNav">
+            <section class="row center">
+                <section class="span25">
+                    <ul class="pull-left span19 hidden-phone">
+                        <li class="active"><a href="{{ siteurl }}index" title="Home">Home</a></li>
+                        <!--   Pages category on menubar
+                        <li>
+                            <a href="#" title="Pages">Pages</a>
+                            <div class="dropdown">
+                                <ul>
+                                    <li><a href="about_us.html" title="Medical Services">About us</a></li>
+                                    <li><a href="news-detail.html" title="News detail">News detail</a></li>
+                                    <li><a href="news-v2.html" title="News v2">News v2</a></li>
+                                    <li><a href="news.html" title="News">News</a></li>
+                                    <li><a href="patients.html" title="Patients">Patients</a></li>
+                                    <li><a href="videos.html" title="Videos">Videos</a></li>
+                                    <li><a href="visitors.html" title="Visitors">Visitors</a></li>
+                                    <li><a href="medicalService-v2.html" title="Services">Services</a></li>
+                                    <li><a href="medicalService.html" title="Services v2">Services v2</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        -->
+                        <li><a href="{{ siteurl }}career" title="Our Doctors">Career</a></li>
+                        <li><a href="{{ siteurl }}doctors" title="Doctors">Doctors</a></li>
+                        <li><a href="{{ siteurl }}doctorsv" title="Doctors v2">Doctors v2</a></li>
+                        <li><a href="{{ siteurl }}location" title="Location">Location</a></li>
+                        <li><a href="{{ siteurl }}contactUs" title="Contact">Contact</a></li>
+                    </ul>
+                    <form id="serachForm" class="pull-right span5">
+                        <input type="text" name="searchString" placeholder="Search.." />
+                        <input type="submit" name="search" value="GO" />
+                    </form>
+                </section>
+            </section>
+        </nav>
+        <section id="slider" class="static">
+            
+            <img src="/static/img/sliderImage1.jpg" alt="" style="">
+            
+        </section>
+        <section id="main" class="normalPage">
+            <section class="row center">
+                <section class="span25 main-wrapper">
+                    <div class="title span9">
+                <h1 class="span8">illumine Location</h1>
+                <h2 class="span8">Doctors & Health Care Responsive Theme.</h2>
+            </div>
+                    <div class="cornerShadow left"></div>
+                    <div class="cornerShadow right"></div>
+                    <section class="content span16">
+                        
+                        <section class="top noDivider">
+                            <h2 class="pull-left">Map and Direction to Our Campus.</h2>
+                            <p class="pull-left">Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                        </section>
+                        <div class="mapHolder">
+                            <img src="/static/img/testMap.png" alt="" />
+                        </div>
+                        
+                        
+                    </section>
+                    <aside class="span8">
+                        <section class="span8 asideBox">
+                            <div class="inside span8">
+                                <figure class="under">
+                                    <div class="underFlow"></div>
+                                    <img src="/static/img/doctorSample.png" alt="" />
+                                </figure>
+                                <div class="info under">
+                                    <p>Meet Our Specialized Doctors Today!!</p>
+                                    <a href="#" title="More Videos" class="customButton">Our Doctors</a>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <section class="span8 paymentBox">
+                            <div class="inside span8">
+                                <div class="info  span3 pull-right">
+                                    <p>Pay Your Bill in Online</p>
+                                    <a href="#" title="Pay online" class="customButton">Pay Online <i></i></a>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <section class="span8 asideBox">
+                            <div class="inside span8 call">
+                                <h1>Campus Direction Assistances @ 24/7</h1>
+                                <figure class="callCenter hidden-tablet">
+                                    <img src="/static/img/callCenterGirl.png" alt="" />
+                                </figure>
+                                <div class="numbers">
+                                    <p>Email: <span>Assistances@illumine.com</span> </p>
+                                    <p>Phone: <span>0123-4567-8910-223</span></p>
+                                    <p>Toll Free: <span>1234-Illumine123</span></p>
+                                </div>
+                            </div>
+                        </section>
+                    </aside>
+                    <div class="separator"></div>
+                    <section class="span25 bottomSection hidden-phone">
+                        <section class="span15 left">
+                            <h1>Our Latest Tweets</h1>
+                            <div class="controls-div pull-right">
+                                <a href="#" title="Previous" class="controls prev">Previous</a>
+                                <a href="#" title="Next" class="controls next">Next</a>
+                            </div>
+                            <section class="span14 coverFlow">
+                                <ul>
+                                    <li class="span14">
+                                        <figure>
+                                            <img src="/static/img/doctorSample.png" alt="" />
+                                            <div class="overlay"></div>
+                                        </figure>
+                                        <div class="info">
+                                            <p>The point of using Lorem Ipsum is that it has a more-or-less normal  fdistribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                                            <span class="customButton smallRadius pull-right">Charlsey Shrader (New York)</span>
+                                        </div>
+                                    </li>
+                                    <li class="span14">
+                                        <figure>
+                                            <img src="/static/img/doctorSample.png" alt="" />
+                                            <div class="overlay"></div>
+                                        </figure>
+                                        <div class="info">
+                                            <p>The point of using Lorem Ipsum is that it has a more-or-less normal  fdistribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                                            <span class="customButton smallRadius pull-right">Charlsey Shrader (New York)</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </section>
+                        </section>
+                        <section class="span9 right">
+                            <h1>Our Latest Tweets</h1>
+                            <div class="twitterFeed">
+                                <p>Doctors and Health care Responsive Theme in Themforest, Stay Tuned on more Updates. </p>
+                                <span>6 hours ago</span>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <footer>
+            <section class="row center">
+                <section class="span25">
+                    <section class="span6 footerBox">
+                        <h1 class="customButton smallRadius">Quick links</h1>
+                        <h2>Doctors and Health Care Theme</h2>
+                        <ul>
+                            <li><a href="#" title=""><i></i>Home</a></li>
+                            <li><a href="#" title=""><i></i>Medical Services</a></li>
+                            <li><a href="#" title=""><i></i>Our Doctor</a></li>
+                            <li><a href="#" title=""><i></i>Patients</a></li>
+                            <li><a href="#" title=""><i></i>News & Events</a></li>
+                            <li><a href="#" title=""><i></i>Visitors</a></li>
+                            <li><a href="#" title=""><i></i>Videos</a></li>
+                            <li><a href="#" title=""><i></i>Location</a></li>
+                        </ul>
+                    </section>
+                    <section class="span6 footerBox">
+                        <h1 class="customButton smallRadius">Medical Services</h1>
+                        <h2>illum Specialised Services</h2>
+                        <ul>
+                            <li><a href="#" title=""><i></i>Laboratory & Pathology</a></li>
+                            <li><a href="#" title=""><i></i>Radiation Medicine</a></li>
+                            <li><a href="#" title=""><i></i>Primary Care</a></li>
+                            <li><a href="#" title=""><i></i>Radiology</a></li>
+                            <li><a href="#" title=""><i></i>General Surgery</a></li>
+                            <li><a href="#" title=""><i></i>Heart Surgery</a></li>
+                            <li><a href="#" title=""><i></i>Infectious Diseases</a></li>
+                        </ul>
+                    </section>
+                    <section class="span6 footerBox">
+                        <h1 class="customButton smallRadius">New Born Babies</h1>
+                        <h2>illum Photo Gallery (Flickr Widget)</h2>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <a href="#" title="View more photos" class="more">View more photos</a>
+                    </section>
+                    <section class="span6 footerBox">
+                        <h1 class="customButton smallRadius">Quick Contact</h1>
+                        <h2>Doctors and Health Care Theme</h2>
+                        <form action="http://teothemes.com/html/Illumine/process.php" method="post">
+                            <input type="text" name="name" placeholder="Name" class="blackInput span6"/>
+                            <input type="email" name="email" placeholder="Email" class="blackInput span6"/>
+                            <textarea placeholder="Message" class="span6"></textarea>
+                            <input type="submit" name="submit" value="Submit" class="customButton"/>
+                        </form>
+                    </section>
+                </section>
+            </section>
+        </footer>
+        <section id="copyright">
+            <section class="row center">
+                <section class="span25">
+                    <p>COPYRIGHT © 2012 illumine. Developed by <a href="http://teothemes.com/">TeoThemes</a></p>
+                </section>
+            </section>
+        </section>
+        <script>
+            if(document.body.offsetWidth < 400) {
+                viewport = document.querySelector("meta[name=viewport]");
+                viewport.setAttribute('content', 'width=device-width; minimum-scale=0.75, initial-scale=0.75; maximum-scale=0.75; user-scalable=0;');
+            }
+        </script>
+    </body>
+</html>

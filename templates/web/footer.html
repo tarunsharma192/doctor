@@ -1,0 +1,90 @@
+{% load static from staticfiles %}
+<!-- Color Box -->
+		<link rel="stylesheet" href="{% static 'css/colorbox.css' %}" />
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+		<script src="{% static 'js/jquery.colorbox.js' %}"></script>
+		<script>
+			$(document).ready(function(){
+				//Examples of how to assign the Colorbox event to elements
+				$(".group2").colorbox({rel:'group2', transition:"fade"});
+
+			});
+		</script>
+<section class="row center">
+                <section class="span25">
+                    <section class="span6 footerBox">
+                        <h1 class="customButton smallRadius">Quick links</h1>
+                        <h2>Doctors and Health Care Theme</h2>
+                        <ul>
+                            <li><a href="/web/index/" title=""><i></i>Home</a></li>                           
+                            <li><a href="/web/doctors/" title=""><i></i>Our Doctor</a></li>
+                            <li><a href="/web/symptoms/" title=""><i></i>Symptom Checker</a></li>
+                            <li><a href="/web/hospitals/" title=""><i></i>Hospitals</a></li>
+                            <li><a href="/web/videohealthtips/" title=""><i></i>Video Health Tips</a></li>
+                            <li><a href="/web/location/" title=""><i></i>Location</a></li>
+                        </ul>
+                    </section>
+                    <section class="span6 footerBox">
+                        <h1 class="customButton smallRadius">Common Diseases</h1>
+                        <h2>Specialised Services</h2>
+                       {% for symp in disease %}
+                        <ul>
+                            <li><a href="{% url 'diseaseinfo' symp.id %}" title=""><i></i>{{symp.Symptom_Name}}</a></li>
+                         <!--   <li><a href="#" title=""><i></i>Radiation Medicine</a></li>
+                            <li><a href="#" title=""><i></i>Primary Care</a></li>
+                            <li><a href="#" title=""><i></i>Radiology</a></li>
+                            <li><a href="#" title=""><i></i>General Surgery</a></li>
+                            <li><a href="#" title=""><i></i>Heart Surgery</a></li>
+                            <li><a href="#" title=""><i></i>Infectious Diseases</a></li> -->
+                        </ul>
+                        {% endfor %}
+                    </section>
+                    <section class="span6 footerBox">
+                        <h1 class="customButton smallRadius">Our doctors</h1>
+                        <h2> Photo Gallery </h2>
+						{% for f in footer %}
+                        <figure>
+						  <a class="group2" href="{{media}}/{{f.footerimage}}">
+						  <img src="{{media}}/{{f.footerimage}}" alt="" /></a>
+                        </figure>
+						{% endfor %}
+                       <!-- <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <figure>
+                            <img src="/static/img/babySample.jpg" alt="" />
+                        </figure>
+                        <a href="#" title="View more photos" class="more">View more photos</a>
+                    </section>-->
+					<!--
+                    <section class="span6 footerBox">
+                        <h1 class="customButton smallRadius">Quick Contact</h1>
+                        <h2>Doctors and Health Care Theme</h2>
+                        <form action="http://teothemes.com/html/Illumine/process.php" method="post">
+                            <input type="text" name="name" placeholder="Name" class="blackInput span6"/>
+                            <input type="email" name="email" placeholder="Email" class="blackInput span6"/>
+                            <textarea placeholder="Message" class="span6"></textarea>
+                            <input type="submit" name="submit" value="Submit" class="customButton"/>
+                        </form>
+                    </section>-->
+                </section>
+            </section> 
+

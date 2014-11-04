@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Place searches</title>
+    <meta charset="utf-8">
+    <style>
+#map-canvas {
+        width: 590px; 
+		height: 450px;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6v5-2uaq_wusHDktM9ILcqIrlPtnZgEk&sensor=false">
+</script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places">
+</script>
+
+    <script>
+var map;
+var infowindow;
+var pinImage = new google.maps.MarkerImage("http://maps.google.com/mapfiles/ms/icons/blue-dot.png");
+if (navigator.geolocation) {
+navigator.geolocation.getCurrentPosition(initialize);
+} else {
+alert("Geo Location is not supported on your current browser!");
+}
+
+function initialize(position) {
+var lat = position.coords.latitude;
+var lng = position.coords.longitude;
+var pyrmont = new google.maps.LatLng(lat, lng);
+
+  map = new google.maps.Map(document.getElementById('map-canvas'), {
+    center: pyrmont,
+    zoom: 11
+  });
+var marker1 = new google.maps.Marker({
+   position:pyrmont,
+   animation:google.maps.Animation.BOUNCE
+  });
+	marker1.setMap(map);
+	var infowindows = new google.maps.InfoWindow({content:"<b>You are here !</b>"});
+	infowindows.open(map,marker1);	
+  
+  var request = {
+    location: pyrmont,
+    radius: 50000,
+    types: ['hospital']
+  };
+  infowindow = new google.maps.InfoWindow();
+  var service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+}
+
+function callback(results, status) {
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      createMarker(results[i]);
+    }
+  }
+}
+
+function createMarker(place) {
+  var placeLoc = place.geometry.location;
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location,
+	animation: google.maps.Animation.DROP,
+	icon: pinImage,
+  });
+  	google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent(place.name);
+    infowindow.open(map, this);
+  });
+}
+
+
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+  </body>
+</html>
+
