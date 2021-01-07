@@ -43,7 +43,7 @@ grappelli-safe==0.3.12
 html5lib==0.999
 httplib2==0.8
 lockfile==0.8
-lxml==3.3.3
+lxml==4.6.2
 mock==1.0.1
 mutagen==1.23
 numpy==1.8.1
