@@ -80,7 +80,7 @@ system-service==0.1.6
 twitter==1.9.1
 tzlocal==1.0
 unity-lens-photos==1.0
-urllib3==1.7.1
+urllib3==1.26.5
 validictory==0.9.3
 wsgiref==0.1.2
 xdiagnose==3.6.3build2
